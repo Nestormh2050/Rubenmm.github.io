@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubén Miguel Martínez - Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --secondary-color: #0f172a;
+            --accent-color: #2563eb;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BACKGROUND: Fine Line Vanguard Template (Technical Grid Pattern) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        /* CONTENEDOR DE BOTONES: Superior derecha */
+        .top-actions-container {
+            position: absolute;
+            top: 15px;
+            right: calc(50% - 475px + 20px); /* Alineado dinámicamente con el borde del wrapper */
+            display: flex;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        /* Ajuste para pantallas medianas o pequeñas */
+        @media (max-width: 1000px) {
+            .top-actions-container {
+                right: 20px;
+            }
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        /* Botón de Idioma (Negro) */
+        .btn-lang {
+            background-color: #000000;
+        }
+
+        /* Botón de Descarga (Azul Accent) */
+        .btn-download {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .action-btn:hover {
+            background-color: #0f172a;
+            border-color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.15);
+        }
+        
+        .btn-download:hover {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+
+        /* Main container that aligns individual modular cards */
+        .cv-wrapper {
+            max-width: 950px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Main Header */
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            border-bottom: 5px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+            margin-top: 15px;
+        }
+
+        .header-info {
+            width: 100%;
+        }
+
+        .header-info h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.05em;
+        }
+
+        .header-info h2 {
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px 20px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #93c5fd;
+        }
+
+        section, .job-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        section:hover, .job-card:hover {
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.07);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        p.resume-text {
+            text-align: justify;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .achievements-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .achievements-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            text-align: justify;
+            color: var(--text-color);
+        }
+
+        .achievements-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .achievements-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #10b981;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .skills-category {
+            margin-bottom: 18px;
+        }
+
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-category strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 5px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #000000;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .experience-group-title {
+            font-size: 1.25rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 10px;
+            margin-bottom: -4px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px 35px;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+        }
+
+        .experience-group-title i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .job-role {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .job-company {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: #ffffff;
+            background-color: #000000;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: 1px solid #000000;
+            white-space: nowrap;
+        }
+
+        .job-details {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .job-details li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .job-details li:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-details li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        .education-item, .lang-item {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .education-item:last-child, .lang-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item strong {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 85px 15px 30px 15px;
+            }
+
+            .top-actions-container {
+                top: 15px;
+                right: 15px;
+                width: calc(100% - 30px);
+                justify-content: flex-end;
+            }
+
+            header {
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .contact-grid {
+                justify-content: center;
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            section, .job-card, .experience-group-title {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ACCIONES SUPERIORES (Botón Descargar CV ENG e Idioma ES) -->
+<div class="top-actions-container">
+    <a href="https://nestormh2050.github.io/Rubenmm.github.io/CV_Ruben_Miguel_Martinez_Arquitecto_SoftwareEN.pdf" class="action-btn btn-download" target="_blank" download="CV_ENG_Ruben_Miguel_Martinez.pdf">
+        <i class="fa-solid fa-file-arrow-down"></i> Download CV
+    </a>
+
+    <!-- Redirige a index.html (tu archivo anterior/principal en español) -->
+    <a href="index.html" class="action-btn btn-lang">
+        <i class="fa-solid fa-earth-americas"></i> ES
+    </a>
+</div>
+
+<div class="cv-wrapper">
+    <header>
+        <div class="header-info">
+            <h1>Rubén Miguel Martínez</h1>
+            <h2>Software Architect / Implementations Manager</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i> Mexico City, Iztacalco
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i> +52 56 53 52 71 39
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i> <a href="mailto:rubenmiguelmartinez@hotmail.com">rubenmiguelmartinez@hotmail.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="summary">
+        <h3 class="section-title"><i class="fa-solid fa-user"></i> Professional Summary</h3>
+        <p class="resume-text">
+            Technology Leader and Software Architect with over 20 years of experience driving IT strategy, corporate infrastructure, and the implementation of critical ERP/CRM platforms. Specialist in large-scale data migration, microservices architecture, and complex API integrations. Proven track record in optimizing infrastructure costs (Cloud/On-Premise), information security governance (ISO 27001, ITIL, DRP, BCP), and leading multidisciplinary teams using Agile methodologies (Scrum).
+        </p>
+    </section>
+
+    <section id="achievements">
+        <h3 class="section-title"><i class="fa-solid fa-trophy"></i> Key Achievements</h3>
+        <ul class="achievements-list">
+            <li><strong>	Darwin System for customs declaration processing: Implementation and automation enabling the processing of over 80,000 records daily, facilitating the automated generation and transmission of reports and data processing for real-time dashboards that support 24/7 operations, achieving 100% uptime across all system functions.</li>
+            <li><strong>	Automation of customer delivery: automated transmission of generated files to customers by the next business day, submission of management reports detailing records processed at each customs location, and enablement of file inquiries via the Odoo CRM portal—achieving 100% of the planned delivery objectives.</li>
+            <li><strong>	Budget optimization: 80% cost reduction in infrastructure and servers across both cloud and on-premise environments.</li>
+            <li><strong>	Operational efficiency: Automation of repetitive processes using Python scripts, increasing operational efficiency by 50%.</li>
+            <li><strong>	Liderazgo en migraciones: Dirección exitosa de migraciones de plataformas críticas (Sistemas CASA y reportes automatizados en Python) sin interrumpir la operación en entornos de producción y se logro migrar el 100% de la base de datos del sistema anterior al nuevo sistema.</li>
+            <li><strong>	ESR (Socially Responsible Company) System: An assessment designed to evaluate a company's internal social responsibility status and determine the steps needed to achieve ESR certification. The diagnosis identifies internal strengths and weaknesses, highlighting areas for improvement to meet the standards for recognition as an ESR. This system, valid through 2026, ensures comprehensive delivery of results, enabling companies to conduct their own internal analysis and review.</li>
+            <li><strong>	Nationwide directory of all non-profit civil society organizations: an annually updated directory—current for 2026—comprising over 750,000 organizations nationwide, categorized by their social purpose and the United Nations' International Classification of Non-Profit Organizations (ICNPO).</li>
+            <li><strong>	HIS Hospital System in ISSEMYM Toluca and Clinic: Hospital System is currently still in use with its 28 main modules for management and in use for all intra-hospital modules that make up different areas and providers.</li>
+            <li><strong>	Imaging System: A custom-developed solution created in collaboration with leading Mexican providers of digital imaging and archiving. It serves various sectors—such as laboratories and data repositories—supporting the diverse applications of a hospital system. The system facilitates the exchange of data between departments, ensuring seamless communication regarding a patient's medical studies and images for their clinical record.</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h3 class="section-title"><i class="fa-solid fa-gear"></i> Technical Skills</h3>
+        
+        <div class="skills-category">
+            <strong>Architecture & Methodologies:</strong>
+            <div class="tags-container">
+                <span class="tag">Solution Architecture</span>
+                <span class="tag">Microservices</span>
+                <span class="tag">API Integration</span>
+                <span class="tag">Agile Methodologies</span>
+                <span class="tag">Regulatory Compliance (ISO 27001, GDPR, HIPAA)</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <strong>Database Management:</strong>
+            <div class="tags-container">
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MS SQL Server (2019-2025)</span>
+                <span class="tag">Oracle 11g</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">ClickHouse</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">MariaDB</span>
+                <span class="tag">DBeaver</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <strong>Cloud & DevOps:</strong>
+            <div class="tags-container">
+                <span class="tag">Microsoft Azure</span>
+                <span class="tag">Amazon AWS</span>
+                <span class="tag">Google Cloud Platform (GCP)</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Git</span>
+                <span class="tag">Linux (Red Hat/Ubuntu/CentOS)</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <strong>Enterprise Systems:</strong>
+            <div class="tags-container">
+                <span class="tag">Odoo ERP</span>
+                <span class="tag">SAP</span>
+                <span class="tag">Microsoft Dynamics CRM</span>
+                <span class="tag">Salesforce</span>
+                <span class="tag">Oracle Netsuite</span>
+                <span class="tag">ASPEL (SAE/COI/NOI)</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <strong>Monitoring & BI:</strong>
+            <div class="tags-container">
+                <span class="tag">Power BI</span>
+                <span class="tag">Grafana</span>
+                <span class="tag">Real-Time Dashboards</span>
+                <span class="tag">Crystal Reports</span>
+                <span class="tag">Jasper Reports</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">Superset</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="experience-group-title">
+        <i class="fa-solid fa-briefcase"></i> Professional Experience
+    </div>
+
+    <div class="job-card" id="job-1">
+        <div class="job-header">
+            <div>
+                <div class="job-role">Implementation Manager / Software Architect</div>
+                <div class="job-company">Himex Customs Agency (Himex Agencia Aduanal)</div>
+            </div>
+            <div class="job-date">May 2024 – Jun 2026</div>
+        </div>
+        <ul class="job-details">
+            <li>	Led the engineering and strategic deployment of the Odoo ERP, automating the end-to-end operational workflow and eliminating critical manual processes; successfully completed 100% of the planned implementation for the customs agency, delivering significant operational improvements.</li>
+            <li>	Designed and implemented high-availability (HA) distributed database architectures (PostgreSQL, SQL Server, Oracle, MySQL), restructuring licensing and reducing implementation costs by 80%.</li>
+            <li>	Developed integration layers (REST APIs) to interconnect native customs systems with accounting and administrative platforms (ASPEL SAE, COI, NOI), enabling system-to-system communication and ensuring 100% information exchange for daily system updates.</li>
+            <li>	Streamlined executive decision-making through real-time interactive dashboards (Power BI, Grafana) for monitoring executive committee KPIs, achieving 100% compliance in operational decision-making and resource allocation.</li>
+            <li>	Designed an operational governance and regulatory compliance framework aligned with international standards (ISO 27001, GDPR, HIPAA), achieving 90% implementation progress across the areas required for regulatory and standards alignment and recognition.</li>
+            <li>	Implementation of Oracle Net Suite for the administrative part and control of the institution regarding the different modules that it has implemented to carry out the administration and use of this system such as Financial Management / Accounting, Customer Relationship Management (CRM), Inventory and Supply Chain Management (SCM), Human Capital Management (SuitePeople).</li>
+        </ul>
+    </div>
+
+    <div class="job-card" id="job-2">
+        <div class="job-header">
+            <div>
+                <div class="job-role">Software Architect / Systems Administrator</div>
+                <div class="job-company">TUTUM TECH</div>
+            </div>
+            <div class="job-date">December 2021 – Abr 2024</div>
+        </div>
+        <ul class="job-details">
+            <li>	Led the massive data migration for the hospital system (HIS ISSEMYM), executing ETL processes to successfully transfer over 100 million clinical records across 28 modules and delivering 100% of the project scope for the hospital's initial implementation phase.</li>
+            <li>	Coordinated the design of microservices (Java/Angular) and interfaces based on the HL7 standard to ensure interoperability among pharmacy, laboratory, and medical imaging departments, achieving 80% implementation across these areas and with external providers for integration into the hospital system.</li>
+            <li>	Executed the critical infrastructure migration from Oracle 11g (Linux) to Microsoft SQL Server 2019 and Windows Server 2019, ensuring 100% data integrity with zero data loss.</li>
+            <li>	Maximized the availability of mission-critical servers through performance optimization and automated infrastructure monitoring.</li>
+            <li>	Established a centralized service desk for incident management under strict SLAs and designed Disaster Recovery Plans (DRP) to ensure business continuity.</li>
+        </ul>
+    </div>
+
+    <div class="job-card" id="job-3">
+        <div class="job-header">
+            <div>
+                <div class="job-role">Systems Director / IT Coordinator</div>
+                <div class="job-company">Mexican Center for Philanthropy (CEMEFI A.C.)</div>
+            </div>
+            <div class="job-date">March 2003 – October 2021</div>
+        </div>
+        <ul class="job-details">
+            <li>	Modernized the ESR (Socially Responsible Company) system using .NET and SQL Server, digitizing the application and evaluation processes nationwide; the system is currently fully operational as of 2026.</li>
+            <li>	Developed the scalable Directory of Philanthropic Institutions platform for over 2,800 civil society organizations, improving project coordination and achieving a 90% system improvement.</li>
+            <li>	We develop supplier collaboration strategies that reduce organizational costs, saving 40% of initial expenses through mutual improvement agreements.</li>
+            <li>	Managed global corporate infrastructure in hybrid environments (Windows Server, SQL/MySQL, IP networks, and Cisco/Avaya telephony), ensuring 100% operational uptime for all systems.</li>
+            <li>	Managed and optimized a network of over 50 web portals based on enterprise CMS platforms (WordPress, Joomla, Drupal) to support high concurrency.</li>
+            <li>	Web systems were developed for large-scale events—specifically annual meetings and the presentation of Socially Responsible Company awards—encompassing online registration and payment, as well as on-site systems for registration, access badge issuance, and award presentation, accommodating an attendance of at least 5,000 people per day.</li>
+            <li>	We have implemented green systems to help us become a low-carbon organization; essentially, we consume fewer resources, which benefits the planet by minimizing our carbon footprint in our use of technology and technological resources.</li>
+            <li>	Development of a library system featuring over 1.2 million items—including physical and digital books as well as various other materials—accessible both via the institution's website and through internal systems for consulting the entire collection housed at its facilities.</li>
+            <li>	Implementation of Oracle NetSuite to handle the institution's administration and control functions—specifically the modules deployed to manage system operations—such as Financial Management/Accounting, Customer Relationship Management (CRM), and Inventory Management.</li>
+        </ul>
+    </div>
+
+    <section id="education">
+        <h3 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+        <div class="education-item">
+            <strong>National Polytechnic Institute (IPN) - UPIICSA</strong><br>
+            Bachelor of Science in Computer Science (Licenciatura en Ciencias de la Informática)
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h3 class="section-title"><i class="fa-solid fa-award"></i> Certifications & Technical Training</h3>
+        
+        <div class="skills-category">
+            <strong>Official Certifications:</strong>
+            <div class="tags-container">
+                <span class="tag">Microsoft Azure Fundamentals AZ900</span>
+                <span class="tag">ClickHouse DB Professional</span>
+                <span class="tag">PostgreSQL Database Administration</span>
+                <span class="tag">Windows Server Administration</span>
+                <span class="tag">SQL Server Management</span>
+                <span class="tag">Microsoft Dynamics CRM</span>
+                <span class="tag">Microsoft SharePoint</span>
+                <span class="tag">Microsoft Exchange Server</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <strong>Specialization & Artificial Intelligence:</strong>
+            <div class="tags-container">
+                <span class="tag">Applied Artificial Intelligence</span>
+                <span class="tag">Kubernetes Containers DevOps</span>
+                <span class="tag">Docker Virtualization</span>
+                <span class="tag">Linux Red Hat Enterprise</span>
+                <span class="tag">Microsoft Power BI Advanced</span>
+                <span class="tag">Dashboarding with Grafana</span>
+                <span class="tag">Cisco Firewall & Network Security</span>
+                <span class="tag">DBeaver Enterprise</span>
+                <span class="tag">Python & JavaScript Programming</span>
+                <span class="tag">Google Gemini</span>
+                <span class="tag">Microsoft Copilot</span>
+                <span class="tag">Claude</span>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">Machine Learning & NLP</span>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <strong>Management Systems & Infrastructure:</strong>
+            <div class="tags-container">
+                <span class="tag">Odoo ERP Consultant & Developer</span>
+                <span class="tag">Salesforce (Sales & Marketing Cloud)</span>
+                <span class="tag">Oracle Netsuite</span>
+                <span class="tag">Cloud Computing & Digital Transformation</span>
+                <span class="tag">Network Attached Storage (NAS) Management</span>
+                <span class="tag">Hosting, Domains & CMS (WordPress, Joomla, Drupal)</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="languages">
+        <h3 class="section-title"><i class="fa-solid fa-language"></i> Languages</h3>
+        <div class="lang-item">
+            <strong>Spanish:</strong> Native
+        </div>
+        <div class="lang-item">
+            <strong>English:</strong>- English: B2 (Upper-Intermediate) - Technical reading, writing, and business conversation. 
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
